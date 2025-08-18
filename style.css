@@ -1,0 +1,147 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: backgroundFade 15s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundFade {
+  0% {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+  }
+  100% {
+    background: linear-gradient(135deg, #3c1053, #ad5389);
+  }
+}
+
+div {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+  padding: 35px 25px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideIn 1.2s ease-out;
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+input#result {
+  width: 100%;
+  height: 65px;
+  border: none;
+  outline: none;
+  text-align: right;
+  padding: 0 20px;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  background: #ecf0f1;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Proper table layout */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 12px;
+}
+
+td {
+  text-align: center;
+}
+
+/* Glowing Buttons with Pulse Animation */
+button {
+  width: 65px;
+  height: 65px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #6a11cb, #2575fc);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  animation: popIn 0.5s ease-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00e0ff, 0 0 30px #00e0ff55;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 10%,
+    transparent 60%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+button:active::before {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <input type="text" id="result" readonly />
+
+      <center>
+        <table>
+          <tr>
+            <td><button onclick="append(7)">7</button></td>
+            <td><button onclick="append(8)">8</button></td>
+            <td><button onclick="append(9)">9</button></td>
+            <td><button onclick="Operation('+')">+</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append(4)">4</button></td>
+            <td><button onclick="append(5)">5</button></td>
+            <td><button onclick="append(6)">6</button></td>
+            <td><button onclick="Operation('-')">-</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append(1)">1</button></td>
+            <td><button onclick="append(2)">2</button></td>
+            <td><button onclick="append(3)">3</button></td>
+            <td><button onclick="Operation('*')">*</button></td>
+          </tr>
+
+          <tr>
+            <td><button onclick="append(0)">0</button></td>
+            <td><button onclick="clearresult()">c</button></td>
+            <td><button onclick="calculate()">=</button></td>
+            <td><button onclick="Operation('/')">/</button></td>
+          </tr>
+        </table>
+      </center>
+      <audio
+        id="cling_files"
+        src="new-notification-09-352705.mp3"
+        preload="auto"
+      ></audio>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
